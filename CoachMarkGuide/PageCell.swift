@@ -17,7 +17,16 @@ class PageCell: UICollectionViewCell {
                 return
             }
             
-            imageView.image = UIImage(named: page.imageName!)
+            
+            var imageName = page.imageName!
+
+            //add postfix to the landscape coach mark pic (if we have any) and then uncomment down below
+//            if UIDevice.current.orientation.isLandscape {
+//                imageName += "_landscape"
+//            }
+            //UIDevice.current.orientation.isLandscape// a good way to tell the difference of landscape or portrait orientation
+            
+            imageView.image = UIImage(named: imageName)
             
             //this part is not gonna be used inside the coach mark
             //refacoter the font size by declaring a macro ratio based on screen size

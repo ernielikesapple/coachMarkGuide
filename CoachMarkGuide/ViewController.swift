@@ -275,20 +275,39 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 //        collectionView.performBatchUpdates(nil, completion: { _ in })
 //    }
     
+    
+    //for ipad we use viewWillTransition to size cause the newTraitCollection only works for iPhone, for iPad the size class for both orientation is the same
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         if UIDevice.current.orientation.isLandscape {
             print("Landscape")
         } else {
             print("Portrait")
         }
+        
       //  collectionView.performBatchUpdates(nil, completion: { _ in })
-        collectionView.collectionViewLayout.invalidateLayout()
-        let indexPath = IndexPath(item: pageControl.currentPage, section: 0)
+       
+        self.collectionView.collectionViewLayout.invalidateLayout()
+        let indexPath = IndexPath(item: self.pageControl.currentPage, section: 0)
         DispatchQueue.main.async {
-               self.collectionView.scrollToItem(at: indexPath,
-                                                at: .centeredHorizontally,
-                                                animated: true)
-                                }
+            self.collectionView.scrollToItem(at: indexPath,
+                                             at: .centeredHorizontally,
+                                             animated: true)
+            self.collectionView.reloadData()
+        }
+        
+//        coordinator.animate(alongsideTransition: {(_ context: UIViewControllerTransitionCoordinatorContext) -> Void in
+//            let orientation: UIInterfaceOrientation = UIApplication.shared.statusBarOrientation
+//            // do whatever
+//            
+//          
+//            
+//        }, completion: {(_ context: UIViewControllerTransitionCoordinatorContext) -> Void in
+//        })
+        
+        //super.viewWillTransition(to: size, with: coordinator)
+        
+        
+        
     }
     
  
