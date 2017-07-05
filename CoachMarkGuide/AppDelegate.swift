@@ -15,7 +15,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        // get current version
+        let infoDictionary = Bundle.main.infoDictionary
+        let currentAppVersion = infoDictionary!["CFBundleShortVersionString"] as! String
+        
+        // retrieve former version
+        let userDefaults = UserDefaults.standard
+        let appVersion = userDefaults.string(forKey: "appVersion")
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        // 1st time open or been updated
+        if appVersion == nil || appVersion != currentAppVersion {
+            // save lastest version
+            userDefaults.setValue(currentAppVersion, forKey: "appVersion")
+            
+            let guideViewController = storyboard.instantiateViewController(withIdentifier: "GuideViewController") as! ViewController
+            self.window?.rootViewController = guideViewController
+        }
+        
         return true
     }
 

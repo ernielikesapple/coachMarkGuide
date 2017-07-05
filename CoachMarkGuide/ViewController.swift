@@ -84,6 +84,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     func closeButtonTapped() {
         
         //dismiss this viewcontroller go to the tabbar view controller
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let MainViewController = storyboard.instantiateViewController(withIdentifier: "main") as! MainViewController
+        self.view.window?.rootViewController = MainViewController
         print("close button tapped")
     }
     
@@ -260,7 +264,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
 //       
 //        if UIApplication.shared.statusBarOrientation.isLandscape {
-//             print("横屏屏幕宽度是 \(view.frame.width)")
+//            
 //        return CGSize(width: view.frame.width, height: view.frame.height)
 //            //return CGSize(width: view.frame.height, height: view.frame.width)
 //            //return CGSize(width: CGFloat(170.0), height: CGFloat(170.0))

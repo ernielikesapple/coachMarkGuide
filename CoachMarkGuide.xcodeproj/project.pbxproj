@@ -15,6 +15,7 @@
 		6DB035431F089D68008B572B /* PageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB035421F089D68008B572B /* PageCell.swift */; };
 		6DB035451F0B660A008B572B /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB035441F0B660A008B572B /* Page.swift */; };
 		6DB035471F0BD1B8008B572B /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB035461F0BD1B8008B572B /* extension.swift */; };
+		6DB0354B1F0D3392008B572B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB0354A1F0D3392008B572B /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		6DB035421F089D68008B572B /* PageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
 		6DB035441F0B660A008B572B /* Page.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		6DB035461F0BD1B8008B572B /* extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
+		6DB0354A1F0D3392008B572B /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				6D837C181F07DF3B0016719E /* Info.plist */,
 				6DB035421F089D68008B572B /* PageCell.swift */,
 				6DB035441F0B660A008B572B /* Page.swift */,
+				6DB0354A1F0D3392008B572B /* MainViewController.swift */,
 			);
 			path = CoachMarkGuide;
 			sourceTree = "<group>";
@@ -105,6 +108,7 @@
 				TargetAttributes = {
 					6D837C081F07DF3B0016719E = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = R39KQQ8QNU;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -148,6 +152,7 @@
 				6D837C0F1F07DF3B0016719E /* ViewController.swift in Sources */,
 				6D837C0D1F07DF3B0016719E /* AppDelegate.swift in Sources */,
 				6DB035451F0B660A008B572B /* Page.swift in Sources */,
+				6DB0354B1F0D3392008B572B /* MainViewController.swift in Sources */,
 				6DB035471F0BD1B8008B572B /* extension.swift in Sources */,
 				6DB035431F089D68008B572B /* PageCell.swift in Sources */,
 			);
@@ -274,6 +279,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = R39KQQ8QNU;
 				INFOPLIST_FILE = CoachMarkGuide/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.perficient.ernie.CoachMarkGuide;
@@ -286,6 +292,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = R39KQQ8QNU;
 				INFOPLIST_FILE = CoachMarkGuide/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.perficient.ernie.CoachMarkGuide;
