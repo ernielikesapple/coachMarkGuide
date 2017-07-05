@@ -16,6 +16,12 @@ struct Page {
     let title: String?
     let message: String?
     
-    let imageName: String
-    let button: UIButton?
+    let imageName: String?
+    //let button: UIButton?
+    let buttonState:ButtonState?
+}
+
+struct ButtonState {
+    let isHighted : Bool
+    let isEnabled : Bool
 }

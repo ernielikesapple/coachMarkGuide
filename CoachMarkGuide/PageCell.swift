@@ -17,7 +17,7 @@ class PageCell: UICollectionViewCell {
                 return
             }
             
-            imageView.image = UIImage(named: page.imageName)
+            imageView.image = UIImage(named: page.imageName!)
             
             //this part is not gonna be used inside the coach mark
             //refacoter the font size by declaring a macro ratio based on screen size
@@ -39,6 +39,20 @@ class PageCell: UICollectionViewCell {
             
             textView.attributedText = attributedText
             
+//            if let button =  page.button {
+//                Button = button
+//                print("11111111")
+//            }else{
+//                print("2222222")
+//            }
+            
+//            Button.isEnabled = page.buttonState.isEnabled
+//            Button.isHighlighted = page.buttonState.isHighted
+//            
+//            if Button.isHighlighted && Button.isEnabled {
+//                Button.backgroundColor = UIColor(red: 167/255, green: 32/255, blue: 58/255, alpha: 1)
+//                print("1111")
+//            }
             
         }
     }
@@ -48,10 +62,11 @@ class PageCell: UICollectionViewCell {
         setUpViews()
     }
     
-    let imageView = { () -> UIImageView in 
+    let imageView = { () -> UIImageView in
         let iv = UIImageView()
         iv.image = UIImage(named: "splash-1")
-        iv.contentMode = .scaleToFill    //.scaleAspectFit//.scaleAspectFill
+        
+        iv.contentMode = .scaleToFill// .scaleAspectFill //.scaleToFill    //.scaleAspectFit//.scaleAspectFill
         iv.clipsToBounds = true
         return iv
     }()
@@ -76,20 +91,24 @@ class PageCell: UICollectionViewCell {
     
     func setUpViews() {
         addSubview(imageView)
-        addSubview(textView)
-        addSubview(lineSeperatorView)
+        //addSubview(textView)
+       // addSubview(lineSeperatorView)
+        //addSubview(Button)
         
         //for coarch mark
-        //imageView.anchorAllRound(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor)
+        imageView.anchorAllRound(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor)
         
         
-        imageView.anchorAllRound(top: topAnchor, left: leftAnchor, bottom: textView.topAnchor, right: rightAnchor)
-        //layout for the text view
-        textView.anchorAllRound(top: nil, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor)
-        textView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.3).isActive = true
-        lineSeperatorView.anchorAllRound(top: nil, left: leftAnchor, bottom: textView.topAnchor, right: rightAnchor)
-        lineSeperatorView.heightAnchor.constraint(equalToConstant: 1).isActive = true
+//        imageView.anchorAllRound(top: topAnchor, left: leftAnchor, bottom: textView.topAnchor, right: rightAnchor)
+//        //layout for the text view
+//        textView.anchorAllRound(top: nil, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor)
+//        textView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.3).isActive = true
+//        lineSeperatorView.anchorAllRound(top: nil, left: leftAnchor, bottom: textView.topAnchor, right: rightAnchor)
+//        lineSeperatorView.heightAnchor.constraint(equalToConstant: 1).isActive = true
         
+//        Button.anchor(top: topAnchor, left: nil, bottom: nil, right: rightAnchor, topConstant: 20, leftConstant: 0, bottomConstant: 0, rightConstant: 20, widthConstant: 80, heightConstant: 20)
+//        
+      
     }
     
     required init?(coder aDecoder: NSCoder) {
